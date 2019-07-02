@@ -4,7 +4,7 @@
 .invoice {
   width: 700px;
   max-width: 700px;
-  border: 1px solid grey;
+  // border: 1px solid grey;
   margin: 50px;
   padding: 50px;
 
@@ -29,4 +29,21 @@
     font-weight: bold;
     padding-top: 25px;
   }
+}
+div.alwaysbreak {
+  page-break-before: always;
+}
+div.nobreak:before {
+  clear: both;
+}
+div.nobreak {
+  page-break-inside: avoid;
+}
+.avoidbreak {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+table, tbody, td, tfoot, th, thead, tr {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
 }
