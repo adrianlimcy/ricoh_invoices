@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title
+      | Ricoh Invoices
+    style
+      == Rails.application.assets.find_asset('application.scss').to_s
+
+  body
+    == yield

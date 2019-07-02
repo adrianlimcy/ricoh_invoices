@@ -4,10 +4,10 @@
 
   h3
     | To:
-    == @invoice.client
+    == invoice.client
   h3
     | Date:
-    == @invoice.date.strftime("%B %d, %Y")
+    == invoice.date.strftime("%B %d, %Y")
 
   table
     thead
@@ -17,7 +17,7 @@
         th
           | Price
     tbody
-      - @invoice.line_item.each do |line_item|
+      - invoice.line_item.each do |line_item|
         tr
           td
             ==line_item.description
@@ -27,14 +27,12 @@
         td style="text-align: right"
           | Total:
         td
-          == number_to_currency(@invoice.total)
+          == number_to_currency(invoice.total)
 
-  - if @invoice.notes
+  - if invoice.notes
     .notes
       p
         strong
           | Notes:
           =>
-          == @invoice.notes
-
-== link_to "Download PDF", invoice_download_path(@invoice, format: "pdf"), target: "_blank", class: "download"
+          == invoice.notes
