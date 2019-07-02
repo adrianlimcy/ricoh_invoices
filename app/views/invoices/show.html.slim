@@ -1,0 +1,37 @@
+.invoice
+  h1
+    | Ricoh Invoice
+
+  h3
+    | To:
+    == @invoice.client
+  h3
+    | Date:
+    == @invoice.date.strftime("%B %d, %Y")
+
+  table
+    thead
+      tr
+        th
+          | Description
+        th
+          | Price
+    tbody
+      - @invoice.line_item.each do |line_item|
+        tr
+          td
+            ==line_item.description
+          td
+            == number_to_currency(line_item.price)
+      tr class="total"
+        td style="text-align: right"
+          | Total:
+        td
+          == number_to_currency(@invoice.total)
+
+  - if @invoice.notes
+    .notes
+      p
+        strong
+          | Notes:
+          == @invoice.notes

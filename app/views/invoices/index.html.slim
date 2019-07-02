@@ -1,0 +1,7 @@
+h1
+  | Invoices
+
+ul
+  - @invoices.each do |invoice|
+    li
+      == link_to "#{invoice.id} - #{invoice.client} - #{invoice.date.strftime("%B %dm %Y")}", invoice_path(invoice)
