@@ -8,7 +8,9 @@ class InvoicePdf < ApplicationRecord
   end
 
   def to_pdf
-    kit = PDFKit.new(as_html, page_size: 'A4', dpi: 400, no_outline: true)
+    # kit = PDFKit.new(as_html, page_size: 'A4', dpi: 300, no_outline: true)
+    kit = PDFKit.new(as_html)
+    # kit.stylesheets << "#{Rails.root}/vendor/stylesheets/pdfkit.scss"
     kit.to_file("#{Rails.root}/public/invoice.pdf")
   end
 

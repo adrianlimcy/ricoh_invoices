@@ -1,0 +1,46 @@
+.invoice {
+  width: 700px;
+  max-width: 700px;
+  // border: 1px solid grey;
+  margin: 50px;
+  padding: 50px;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .notes {
+    margin-top: 100px;
+  }
+
+  table {
+    width: 90%;
+    text-align: left;
+  }
+  th {
+    padding-bottom: 15px;
+  }
+
+  .total td {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 25px;
+  }
+}
+div.alwaysbreak {
+  page-break-before: always;
+}
+div.nobreak:before {
+  clear: both;
+}
+div.nobreak {
+  page-break-inside: avoid;
+}
+.avoidbreak {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+table, tbody, td, tfoot, th, thead, tr {
+  break-inside: avoid !important;
+  page-break-inside: avoid !important;
+}
